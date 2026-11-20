@@ -3,7 +3,7 @@ import { setTimeout as delay } from 'node:timers/promises';
 
 const account = 'BoBoDai';
 const template = new URL('./mission-control.svg', import.meta.url);
-const output = new URL('../assets/orbital-dashboard.svg', import.meta.url);
+const output = new URL('../assets/flight-deck.svg', import.meta.url);
 const dayMs = 86_400_000;
 const now = new Date();
 const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
@@ -53,7 +53,7 @@ async function dailyCommits() {
   return [...totals.entries()];
 }
 
-const heat = ['#231d3b', '#5b3787', '#9258c3', '#a381f4', 'url(#heat)'];
+const heat = ['#283740', '#42677a', '#6d8e91', '#bf985d', 'url(#heat)'];
 
 function renderChart(activity) {
   const peak = Math.max(1, ...activity.map(([, count]) => count));
@@ -65,12 +65,12 @@ function renderChart(activity) {
       const x = 405 + 64 * column;
       const level = Math.ceil(4 * count / peak);
       const content = count
-        ? `<text x="${x + 28}" y="${y + 18}" text-anchor="middle" font-size="13" font-weight="700" fill="${level > 2 ? '#100d2d' : '#faf6ff'}">${count}</text>`
+        ? `<text x="${x + 28}" y="${y + 18}" text-anchor="middle" font-size="13" font-weight="700" fill="${level > 1 ? '#19252c' : '#fff7e0'}">${count}</text>`
         : '';
-      return `<g><title>${date} UTC: ${count} ${count === 1 ? 'commit' : 'commits'}</title><rect x="${x}" y="${y}" width="56" height="26" rx="4" fill="${heat[level]}" stroke="#5e487b"/>${content}</g>`;
+      return `<g><title>${date} UTC: ${count} ${count === 1 ? 'commit' : 'commits'}</title><rect x="${x}" y="${y}" width="56" height="26" rx="4" fill="${heat[level]}" stroke="#526369"/>${content}</g>`;
     }).join('\n    ');
     const start = week[0][0].slice(5).replace('-', '.');
-    rows.push(`<text x="338" y="${y + 18}" class="label">${start}</text>\n    ${cells}`);
+    rows.push(`<text x="338" y="${y + 18}" class="label screen-label">${start}</text>\n    ${cells}`);
   }
   return rows.join('\n    ');
 }
