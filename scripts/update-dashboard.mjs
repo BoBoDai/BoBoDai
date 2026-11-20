@@ -8,10 +8,28 @@ const dayMs = 86_400_000;
 const now = new Date();
 const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
 const day = offset => new Date(today + offset * dayMs).toISOString().slice(0, 10);
-const request = path => fetch(`https://api.github.com${path}`, {
-  headers: { Accept: 'application/vnd.github+json', 'User-Agent': `${account}-profile-dashboard` },
-  signal: AbortSignal.timeout(20_000),
-});
+const headers = { Accept: 'application/vnd.github+json', 'User-Agent': `${account}-profile-dashboard` };
+const token = process.env.DASHBOARD_GITHUB_TOKEN;
+if (token) headers.Authorization = `Bearer ${token}`;
+
+async function request(path) {
+  const url = `https://api.github.com${path}`;
+  for (const wait of [0, 3_000, 65_000]) {
+    if (wait) await delay(wait);
+    let response;
+    try {
+      response = await fetch(url, { headers, signal: AbortSignal.timeout(20_000) });
+    } catch (error) {
+      if (wait === 65_000) throw error;
+      continue;
+    }
+    if (response.ok) return response;
+    await response.body?.cancel();
+    if (wait === 65_000 || ![403, 429, 502, 503, 504].includes(response.status)) {
+      throw new Error(`GitHub API returned ${response.status} while refreshing public data`);
+    }
+  }
+}
 
 async function search(endpoint, qualifier, perPage = 1, page = 1) {
   const query = new URLSearchParams({
@@ -19,14 +37,9 @@ async function search(endpoint, qualifier, perPage = 1, page = 1) {
     per_page: String(perPage),
     page: String(page),
   });
-  for (const wait of [0, 3_000, 65_000]) {
+  for (const wait of [0, 3_000]) {
     if (wait) await delay(wait);
     const response = await request(`/search/${endpoint}?${query}`);
-    if (!response.ok) {
-      await response.body?.cancel();
-      if ([403, 429, 502, 503, 504].includes(response.status)) continue;
-      throw new Error(`GitHub search returned ${response.status} for ${qualifier}`);
-    }
     const result = await response.json();
     if (!result.incomplete_results && Number.isSafeInteger(result.total_count)
         && result.total_count >= 0 && Array.isArray(result.items)) return result;
@@ -55,10 +68,6 @@ async function dailyCommits() {
 
 async function readPublicData(path) {
   const response = await request(path);
-  if (!response.ok) {
-    await response.body?.cancel();
-    throw new Error(`GitHub repository API returned ${response.status}`);
-  }
   return response.json();
 }
 

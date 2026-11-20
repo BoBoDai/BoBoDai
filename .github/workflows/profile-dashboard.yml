@@ -26,6 +26,8 @@ jobs:
         with:
           ref: main
       - name: Refresh the dashboard
+        env:
+          DASHBOARD_GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/update-dashboard.mjs
       - name: Publish updated data
         run: |
