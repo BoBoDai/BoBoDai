@@ -78,7 +78,9 @@ async function languageTotals() {
       readPublicData(`/repos/${account}/${encodeURIComponent(name)}/languages`)));
     for (const languages of results) {
       for (const [language, bytes] of Object.entries(languages)) {
-        if (bytes > 0) totals.set(language, (totals.get(language) ?? 0) + bytes);
+        if (language !== 'HTML' && bytes > 0) {
+          totals.set(language, (totals.get(language) ?? 0) + bytes);
+        }
       }
     }
   }
@@ -127,7 +129,7 @@ function renderLanguages(languages) {
     const percent = 100 * count / bytes;
     const percentText = percent < 0.1 ? '<0.1%' : `${percent.toFixed(1)}%`;
     const width = 804 * count / bytes;
-    const x = 48 + 116 * index;
+    const x = 48 + Math.round(804 * index / entries.length);
     const nameLabel = name.length > 13 ? `${name.slice(0, 12)}…` : name;
     const detail = `${escapeXml(name)}: ${escapeXml(percentText)}`;
     bars.push(`<g><title>${detail}</title><rect x="${left.toFixed(2)}" y="431" width="${width.toFixed(2)}" height="20" fill="${color}"/></g>`);
@@ -138,7 +140,7 @@ function renderLanguages(languages) {
   return {
     bars: `<g clip-path="url(#language-rail)">\n      ${bars.join('\n      ')}\n    </g>`,
     legend: legend.join('\n    '),
-    summary: `Languages by bytes in own public repositories: ${summary.join(', ')}.`,
+    summary: `Languages by bytes in own public repositories, excluding HTML: ${summary.join(', ')}.`,
   };
 }
 

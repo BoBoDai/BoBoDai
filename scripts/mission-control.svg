@@ -118,7 +118,7 @@
     <path d="M28 390H860L872 402V498L860 510H28Z" fill="#f5f0e1" stroke="#9a9588"/>
     <path d="M28 425V390H128" fill="none" stroke="#a0604c" stroke-width="1.5"/>
     <text x="48" y="416" class="section">LANGUAGE MIX</text>
-    <text x="852" y="415" class="label" text-anchor="end">OWN PUBLIC REPOS · BYTES</text>
+    <text x="852" y="415" class="label" text-anchor="end">OWN PUBLIC REPOS · BYTES · EXCLUDES HTML</text>
     <rect x="48" y="431" width="804" height="20" rx="4" fill="#d9d2c1"/>
     {{LANGUAGE_BARS}}
     {{LANGUAGE_LEGEND}}

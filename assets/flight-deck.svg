@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 566" role="img" aria-labelledby="title description">
   <title id="title">BoBoDai · Mission Control</title>
-  <desc id="description">Public GitHub activity for BoBoDai. All-time merged pull requests: 101. Default-branch commits in the last 28 complete UTC days: 43 across 5 active days. Languages by bytes in own public repositories: HTML: 59.8%, Rust: 23.1%, TypeScript: 8.6%, JavaScript: 4.2%, CSS: 2.7%, Python: 1.2%, Shell: 0.4%.</desc>
+  <desc id="description">Public GitHub activity for BoBoDai. All-time merged pull requests: 101. Default-branch commits in the last 28 complete UTC days: 43 across 5 active days. Languages by bytes in own public repositories, excluding HTML: Rust: 57.5%, TypeScript: 21.4%, JavaScript: 10.4%, CSS: 6.8%, Python: 2.9%, Shell: 1.0%.</desc>
   <style>
     text { font-family: ui-monospace, Menlo, Consolas, monospace; }
     .label { fill: #4d5753; font-size: 13px; letter-spacing: 1px; }
@@ -149,24 +149,22 @@
     <path d="M28 390H860L872 402V498L860 510H28Z" fill="#f5f0e1" stroke="#9a9588"/>
     <path d="M28 425V390H128" fill="none" stroke="#a0604c" stroke-width="1.5"/>
     <text x="48" y="416" class="section">LANGUAGE MIX</text>
-    <text x="852" y="415" class="label" text-anchor="end">OWN PUBLIC REPOS · BYTES</text>
+    <text x="852" y="415" class="label" text-anchor="end">OWN PUBLIC REPOS · BYTES · EXCLUDES HTML</text>
     <rect x="48" y="431" width="804" height="20" rx="4" fill="#d9d2c1"/>
     <g clip-path="url(#language-rail)">
-      <g><title>HTML: 59.8%</title><rect x="48.00" y="431" width="480.69" height="20" fill="#45687d"/></g>
-      <g><title>Rust: 23.1%</title><rect x="528.69" y="431" width="185.91" height="20" fill="#ac4e38"/></g>
-      <g><title>TypeScript: 8.6%</title><rect x="714.60" y="431" width="69.05" height="20" fill="#bc9755"/></g>
-      <g><title>JavaScript: 4.2%</title><rect x="783.66" y="431" width="33.71" height="20" fill="#66847e"/></g>
-      <g><title>CSS: 2.7%</title><rect x="817.36" y="431" width="22.06" height="20" fill="#d18a56"/></g>
-      <g><title>Python: 1.2%</title><rect x="839.42" y="431" width="9.51" height="20" fill="#80746d"/></g>
-      <g><title>Shell: 0.4%</title><rect x="848.93" y="431" width="3.07" height="20" fill="#695d73"/></g>
+      <g><title>Rust: 57.5%</title><rect x="48.00" y="431" width="462.32" height="20" fill="#45687d"/></g>
+      <g><title>TypeScript: 21.4%</title><rect x="510.32" y="431" width="171.72" height="20" fill="#ac4e38"/></g>
+      <g><title>JavaScript: 10.4%</title><rect x="682.04" y="431" width="83.82" height="20" fill="#bc9755"/></g>
+      <g><title>CSS: 6.8%</title><rect x="765.86" y="431" width="54.86" height="20" fill="#66847e"/></g>
+      <g><title>Python: 2.9%</title><rect x="820.72" y="431" width="23.64" height="20" fill="#d18a56"/></g>
+      <g><title>Shell: 1.0%</title><rect x="844.36" y="431" width="7.64" height="20" fill="#80746d"/></g>
     </g>
-    <g><title>HTML: 59.8%</title><rect x="48" y="466" width="9" height="9" rx="1.4" fill="#45687d"/><text x="62" y="475" class="label" style="font-size:12px;letter-spacing:0">HTML</text><text x="62" y="494" class="metric" font-size="15">59.8%</text></g>
-    <g><title>Rust: 23.1%</title><rect x="164" y="466" width="9" height="9" rx="1.4" fill="#ac4e38"/><text x="178" y="475" class="label" style="font-size:12px;letter-spacing:0">Rust</text><text x="178" y="494" class="metric" font-size="15">23.1%</text></g>
-    <g><title>TypeScript: 8.6%</title><rect x="280" y="466" width="9" height="9" rx="1.4" fill="#bc9755"/><text x="294" y="475" class="label" style="font-size:12px;letter-spacing:0">TypeScript</text><text x="294" y="494" class="metric" font-size="15">8.6%</text></g>
-    <g><title>JavaScript: 4.2%</title><rect x="396" y="466" width="9" height="9" rx="1.4" fill="#66847e"/><text x="410" y="475" class="label" style="font-size:12px;letter-spacing:0">JavaScript</text><text x="410" y="494" class="metric" font-size="15">4.2%</text></g>
-    <g><title>CSS: 2.7%</title><rect x="512" y="466" width="9" height="9" rx="1.4" fill="#d18a56"/><text x="526" y="475" class="label" style="font-size:12px;letter-spacing:0">CSS</text><text x="526" y="494" class="metric" font-size="15">2.7%</text></g>
-    <g><title>Python: 1.2%</title><rect x="628" y="466" width="9" height="9" rx="1.4" fill="#80746d"/><text x="642" y="475" class="label" style="font-size:12px;letter-spacing:0">Python</text><text x="642" y="494" class="metric" font-size="15">1.2%</text></g>
-    <g><title>Shell: 0.4%</title><rect x="744" y="466" width="9" height="9" rx="1.4" fill="#695d73"/><text x="758" y="475" class="label" style="font-size:12px;letter-spacing:0">Shell</text><text x="758" y="494" class="metric" font-size="15">0.4%</text></g>
+    <g><title>Rust: 57.5%</title><rect x="48" y="466" width="9" height="9" rx="1.4" fill="#45687d"/><text x="62" y="475" class="label" style="font-size:12px;letter-spacing:0">Rust</text><text x="62" y="494" class="metric" font-size="15">57.5%</text></g>
+    <g><title>TypeScript: 21.4%</title><rect x="182" y="466" width="9" height="9" rx="1.4" fill="#ac4e38"/><text x="196" y="475" class="label" style="font-size:12px;letter-spacing:0">TypeScript</text><text x="196" y="494" class="metric" font-size="15">21.4%</text></g>
+    <g><title>JavaScript: 10.4%</title><rect x="316" y="466" width="9" height="9" rx="1.4" fill="#bc9755"/><text x="330" y="475" class="label" style="font-size:12px;letter-spacing:0">JavaScript</text><text x="330" y="494" class="metric" font-size="15">10.4%</text></g>
+    <g><title>CSS: 6.8%</title><rect x="450" y="466" width="9" height="9" rx="1.4" fill="#66847e"/><text x="464" y="475" class="label" style="font-size:12px;letter-spacing:0">CSS</text><text x="464" y="494" class="metric" font-size="15">6.8%</text></g>
+    <g><title>Python: 2.9%</title><rect x="584" y="466" width="9" height="9" rx="1.4" fill="#d18a56"/><text x="598" y="475" class="label" style="font-size:12px;letter-spacing:0">Python</text><text x="598" y="494" class="metric" font-size="15">2.9%</text></g>
+    <g><title>Shell: 1.0%</title><rect x="718" y="466" width="9" height="9" rx="1.4" fill="#80746d"/><text x="732" y="475" class="label" style="font-size:12px;letter-spacing:0">Shell</text><text x="732" y="494" class="metric" font-size="15">1.0%</text></g>
 
     <circle cx="33" cy="541" r="3.3" fill="#6c8075"/>
     <text x="46" y="546" class="label">PUBLIC DATA / DEFAULT-BRANCH COMMITS</text>
