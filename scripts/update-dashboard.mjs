@@ -77,18 +77,13 @@ function renderChart(activity) {
 
 const window = `${day(-90)}..${day(-1)}`;
 const { total_count: merged } = await search('issues', `is:pr is:merged merged:${window}`);
-const { total_count: unmerged } = await search('issues', `is:pr is:closed is:unmerged closed:${window}`);
-const resolved = merged + unmerged;
-const rate = resolved ? `${Math.round(100 * merged / resolved)}%` : '—';
 const activity = await dailyCommits();
 const total = activity.reduce((sum, [, count]) => sum + count, 0);
 const activeDays = activity.filter(([, count]) => count > 0).length;
 
 const fields = {
-  SUMMARY: `Public GitHub activity for ${account}. In the last 90 complete UTC days, ${merged} pull requests merged and ${unmerged} closed without merging. Merge rate among these outcomes: ${rate}. In the last 28 complete UTC days, ${total} default-branch commits across ${activeDays} active days.`,
+  SUMMARY: `Public GitHub activity for ${account}. Merged pull requests in the last 90 complete UTC days: ${merged}. Default-branch commits in the last 28 complete UTC days: ${total} across ${activeDays} active days.`,
   PRS_MERGED: merged,
-  PRS_UNMERGED: unmerged,
-  MERGE_RATE: rate,
   ACTIVE_DAYS: activeDays,
   COMMITS: total,
   CHART: renderChart(activity),

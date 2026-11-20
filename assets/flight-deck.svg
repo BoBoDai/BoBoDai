@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="title description">
   <title id="title">BoBoDai · Mission Control</title>
-  <desc id="description">Public GitHub activity for BoBoDai. In the last 90 complete UTC days, 2 pull requests merged and 4 closed without merging. Merge rate among these outcomes: 33%. In the last 28 complete UTC days, 43 default-branch commits across 5 active days.</desc>
+  <desc id="description">Public GitHub activity for BoBoDai. Merged pull requests in the last 90 complete UTC days: 2. Default-branch commits in the last 28 complete UTC days: 43 across 5 active days.</desc>
   <style>
     text { font-family: ui-monospace, Menlo, Consolas, monospace; }
     .label { fill: #4d5753; font-size: 13px; letter-spacing: 1px; }
@@ -93,19 +93,12 @@
     <path d="M28 203V152H112M316 194V167L331 152H418" fill="none" stroke="#a0604c" stroke-width="1.5"/>
     <path d="M46 191H282" stroke="#b6ae9d"/><path d="M335 191H853" stroke="#697a77"/>
 
-    <text x="48" y="178" class="section">PR OUTCOMES</text>
+    <text x="48" y="178" class="section">PULL REQUESTS</text>
     <rect x="261" y="168" width="20" height="7" rx="2" fill="url(#hatch)"/>
-    <path d="M48 246H280M48 289H280" stroke="#c6bfb0"/>
-    <path d="M48 217h4v14h-4z" fill="#52768b"/>
-    <path d="M48 260h4v14h-4z" fill="#b9573d"/>
-    <path d="M48 303h4v14h-4z" fill="#aa803f"/>
-    <text x="62" y="230" class="label">MERGED</text>
-    <text x="62" y="273" class="label">CLOSED UNMERGED</text>
-    <text x="62" y="316" class="label">MERGE RATE</text>
-    <text x="280" y="233" text-anchor="end" class="metric" font-size="25">2</text>
-    <text x="280" y="276" text-anchor="end" class="metric" font-size="25">4</text>
-    <text x="280" y="319" text-anchor="end" class="metric" font-size="25">33%</text>
-    <text x="48" y="356" class="label" fill="#766149">LAST 90 DAYS</text>
+    <text x="164" y="281" text-anchor="middle" class="metric" font-size="78">2</text>
+    <text x="164" y="308" text-anchor="middle" class="section">MERGED</text>
+    <path d="M48 326H280" stroke="#c6bfb0"/>
+    <text x="48" y="356" class="label">LAST 90 DAYS</text>
 
     <text x="337" y="178" class="section screen-title">COMMIT SIGNAL</text>
     <text x="852" y="177" text-anchor="end" class="label screen-label">5/28 DAYS ACTIVE</text>
