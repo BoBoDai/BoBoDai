@@ -109,7 +109,15 @@ function renderChart(activity) {
   return rows.join('\n    ');
 }
 
-const languageColors = ['#45687d', '#ac4e38', '#bc9755', '#66847e', '#d18a56', '#80746d', '#695d73'];
+const languageColors = new Map([
+  ['Rust', '#b15b41'],
+  ['TypeScript', '#486b80'],
+  ['JavaScript', '#b9914d'],
+  ['CSS', '#806383'],
+  ['Python', '#53868c'],
+  ['Shell', '#6d7e52'],
+]);
+const maxLanguageEntries = 7;
 const escapeXml = value => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 
 function renderLanguages(languages) {
@@ -117,15 +125,16 @@ function renderLanguages(languages) {
     return { bars: '', legend: '<text x="48" y="483" class="label">NO LANGUAGE DATA</text>', summary: 'No language data.' };
   }
   const bytes = languages.reduce((sum, [, count]) => sum + count, 0);
-  const entries = languages.length <= languageColors.length ? languages : [
-    ...languages.slice(0, 6), ['Other', languages.slice(6).reduce((sum, [, count]) => sum + count, 0)],
+  const entries = languages.length <= maxLanguageEntries ? languages : [
+    ...languages.slice(0, maxLanguageEntries - 1),
+    ['Other', languages.slice(maxLanguageEntries - 1).reduce((sum, [, count]) => sum + count, 0)],
   ];
   let left = 48;
   const bars = [];
   const legend = [];
   const summary = [];
   entries.forEach(([name, count], index) => {
-    const color = languageColors[index];
+    const color = languageColors.get(name) ?? '#827b72';
     const percent = 100 * count / bytes;
     const percentText = percent < 0.1 ? '<0.1%' : `${percent.toFixed(1)}%`;
     const width = 804 * count / bytes;

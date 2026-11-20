@@ -152,19 +152,19 @@
     <text x="852" y="415" class="label" text-anchor="end">OWN PUBLIC REPOS · BYTES · EXCLUDES HTML</text>
     <rect x="48" y="431" width="804" height="20" rx="4" fill="#d9d2c1"/>
     <g clip-path="url(#language-rail)">
-      <g><title>Rust: 57.5%</title><rect x="48.00" y="431" width="462.32" height="20" fill="#45687d"/></g>
-      <g><title>TypeScript: 21.4%</title><rect x="510.32" y="431" width="171.72" height="20" fill="#ac4e38"/></g>
-      <g><title>JavaScript: 10.4%</title><rect x="682.04" y="431" width="83.82" height="20" fill="#bc9755"/></g>
-      <g><title>CSS: 6.8%</title><rect x="765.86" y="431" width="54.86" height="20" fill="#66847e"/></g>
-      <g><title>Python: 2.9%</title><rect x="820.72" y="431" width="23.64" height="20" fill="#d18a56"/></g>
-      <g><title>Shell: 1.0%</title><rect x="844.36" y="431" width="7.64" height="20" fill="#80746d"/></g>
+      <g><title>Rust: 57.5%</title><rect x="48.00" y="431" width="462.32" height="20" fill="#b15b41"/></g>
+      <g><title>TypeScript: 21.4%</title><rect x="510.32" y="431" width="171.72" height="20" fill="#486b80"/></g>
+      <g><title>JavaScript: 10.4%</title><rect x="682.04" y="431" width="83.82" height="20" fill="#b9914d"/></g>
+      <g><title>CSS: 6.8%</title><rect x="765.86" y="431" width="54.86" height="20" fill="#806383"/></g>
+      <g><title>Python: 2.9%</title><rect x="820.72" y="431" width="23.64" height="20" fill="#53868c"/></g>
+      <g><title>Shell: 1.0%</title><rect x="844.36" y="431" width="7.64" height="20" fill="#6d7e52"/></g>
     </g>
-    <g><title>Rust: 57.5%</title><rect x="48" y="466" width="9" height="9" rx="1.4" fill="#45687d"/><text x="62" y="475" class="label" style="font-size:12px;letter-spacing:0">Rust</text><text x="62" y="494" class="metric" font-size="15">57.5%</text></g>
-    <g><title>TypeScript: 21.4%</title><rect x="182" y="466" width="9" height="9" rx="1.4" fill="#ac4e38"/><text x="196" y="475" class="label" style="font-size:12px;letter-spacing:0">TypeScript</text><text x="196" y="494" class="metric" font-size="15">21.4%</text></g>
-    <g><title>JavaScript: 10.4%</title><rect x="316" y="466" width="9" height="9" rx="1.4" fill="#bc9755"/><text x="330" y="475" class="label" style="font-size:12px;letter-spacing:0">JavaScript</text><text x="330" y="494" class="metric" font-size="15">10.4%</text></g>
-    <g><title>CSS: 6.8%</title><rect x="450" y="466" width="9" height="9" rx="1.4" fill="#66847e"/><text x="464" y="475" class="label" style="font-size:12px;letter-spacing:0">CSS</text><text x="464" y="494" class="metric" font-size="15">6.8%</text></g>
-    <g><title>Python: 2.9%</title><rect x="584" y="466" width="9" height="9" rx="1.4" fill="#d18a56"/><text x="598" y="475" class="label" style="font-size:12px;letter-spacing:0">Python</text><text x="598" y="494" class="metric" font-size="15">2.9%</text></g>
-    <g><title>Shell: 1.0%</title><rect x="718" y="466" width="9" height="9" rx="1.4" fill="#80746d"/><text x="732" y="475" class="label" style="font-size:12px;letter-spacing:0">Shell</text><text x="732" y="494" class="metric" font-size="15">1.0%</text></g>
+    <g><title>Rust: 57.5%</title><rect x="48" y="466" width="9" height="9" rx="1.4" fill="#b15b41"/><text x="62" y="475" class="label" style="font-size:12px;letter-spacing:0">Rust</text><text x="62" y="494" class="metric" font-size="15">57.5%</text></g>
+    <g><title>TypeScript: 21.4%</title><rect x="182" y="466" width="9" height="9" rx="1.4" fill="#486b80"/><text x="196" y="475" class="label" style="font-size:12px;letter-spacing:0">TypeScript</text><text x="196" y="494" class="metric" font-size="15">21.4%</text></g>
+    <g><title>JavaScript: 10.4%</title><rect x="316" y="466" width="9" height="9" rx="1.4" fill="#b9914d"/><text x="330" y="475" class="label" style="font-size:12px;letter-spacing:0">JavaScript</text><text x="330" y="494" class="metric" font-size="15">10.4%</text></g>
+    <g><title>CSS: 6.8%</title><rect x="450" y="466" width="9" height="9" rx="1.4" fill="#806383"/><text x="464" y="475" class="label" style="font-size:12px;letter-spacing:0">CSS</text><text x="464" y="494" class="metric" font-size="15">6.8%</text></g>
+    <g><title>Python: 2.9%</title><rect x="584" y="466" width="9" height="9" rx="1.4" fill="#53868c"/><text x="598" y="475" class="label" style="font-size:12px;letter-spacing:0">Python</text><text x="598" y="494" class="metric" font-size="15">2.9%</text></g>
+    <g><title>Shell: 1.0%</title><rect x="718" y="466" width="9" height="9" rx="1.4" fill="#6d7e52"/><text x="732" y="475" class="label" style="font-size:12px;letter-spacing:0">Shell</text><text x="732" y="494" class="metric" font-size="15">1.0%</text></g>
 
     <circle cx="33" cy="541" r="3.3" fill="#6c8075"/>
     <text x="46" y="546" class="label">PUBLIC DATA / DEFAULT-BRANCH COMMITS</text>
