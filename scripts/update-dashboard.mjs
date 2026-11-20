@@ -8,6 +8,10 @@ const dayMs = 86_400_000;
 const now = new Date();
 const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
 const day = offset => new Date(today + offset * dayMs).toISOString().slice(0, 10);
+const request = path => fetch(`https://api.github.com${path}`, {
+  headers: { Accept: 'application/vnd.github+json', 'User-Agent': `${account}-profile-dashboard` },
+  signal: AbortSignal.timeout(20_000),
+});
 
 async function search(endpoint, qualifier, perPage = 1, page = 1) {
   const query = new URLSearchParams({
@@ -15,13 +19,9 @@ async function search(endpoint, qualifier, perPage = 1, page = 1) {
     per_page: String(perPage),
     page: String(page),
   });
-  const url = `https://api.github.com/search/${endpoint}?${query}`;
   for (const wait of [0, 3_000, 65_000]) {
     if (wait) await delay(wait);
-    const response = await fetch(url, {
-      headers: { Accept: 'application/vnd.github+json', 'User-Agent': `${account}-profile-dashboard` },
-      signal: AbortSignal.timeout(20_000),
-    });
+    const response = await request(`/search/${endpoint}?${query}`);
     if (!response.ok) {
       await response.body?.cancel();
       if ([403, 429, 502, 503, 504].includes(response.status)) continue;
@@ -53,6 +53,38 @@ async function dailyCommits() {
   return [...totals.entries()];
 }
 
+async function readPublicData(path) {
+  const response = await request(path);
+  if (!response.ok) {
+    await response.body?.cancel();
+    throw new Error(`GitHub repository API returned ${response.status}`);
+  }
+  return response.json();
+}
+
+async function languageTotals() {
+  const repositories = [];
+  for (let page = 1; ; page++) {
+    const results = await readPublicData(`/users/${account}/repos?type=owner&per_page=100&page=${page}`);
+    repositories.push(...results.filter(repo => !repo.private && !repo.fork
+      && repo.name.toLowerCase() !== account.toLowerCase()));
+    if (results.length < 100) break;
+  }
+
+  const totals = new Map();
+  for (let index = 0; index < repositories.length; index += 4) {
+    const batch = repositories.slice(index, index + 4);
+    const results = await Promise.all(batch.map(({ name }) =>
+      readPublicData(`/repos/${account}/${encodeURIComponent(name)}/languages`)));
+    for (const languages of results) {
+      for (const [language, bytes] of Object.entries(languages)) {
+        if (bytes > 0) totals.set(language, (totals.get(language) ?? 0) + bytes);
+      }
+    }
+  }
+  return [...totals].sort(([a, bytesA], [b, bytesB]) => bytesB - bytesA || a.localeCompare(b));
+}
+
 const heat = ['#283740', '#42677a', '#6d8e91', '#bf985d', 'url(#heat)'];
 
 function renderChart(activity) {
@@ -75,18 +107,58 @@ function renderChart(activity) {
   return rows.join('\n    ');
 }
 
-const window = `${day(-90)}..${day(-1)}`;
-const { total_count: merged } = await search('issues', `is:pr is:merged merged:${window}`);
-const activity = await dailyCommits();
+const languageColors = ['#45687d', '#ac4e38', '#bc9755', '#66847e', '#d18a56', '#80746d', '#695d73'];
+const escapeXml = value => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+
+function renderLanguages(languages) {
+  if (!languages.length) {
+    return { bars: '', legend: '<text x="48" y="483" class="label">NO LANGUAGE DATA</text>', summary: 'No language data.' };
+  }
+  const bytes = languages.reduce((sum, [, count]) => sum + count, 0);
+  const entries = languages.length <= languageColors.length ? languages : [
+    ...languages.slice(0, 6), ['Other', languages.slice(6).reduce((sum, [, count]) => sum + count, 0)],
+  ];
+  let left = 48;
+  const bars = [];
+  const legend = [];
+  const summary = [];
+  entries.forEach(([name, count], index) => {
+    const color = languageColors[index];
+    const percent = 100 * count / bytes;
+    const percentText = percent < 0.1 ? '<0.1%' : `${percent.toFixed(1)}%`;
+    const width = 804 * count / bytes;
+    const x = 48 + 116 * index;
+    const nameLabel = name.length > 13 ? `${name.slice(0, 12)}…` : name;
+    const detail = `${escapeXml(name)}: ${escapeXml(percentText)}`;
+    bars.push(`<g><title>${detail}</title><rect x="${left.toFixed(2)}" y="431" width="${width.toFixed(2)}" height="20" fill="${color}"/></g>`);
+    legend.push(`<g><title>${detail}</title><rect x="${x}" y="466" width="9" height="9" rx="1.4" fill="${color}"/><text x="${x + 14}" y="475" class="label" style="font-size:12px;letter-spacing:0">${escapeXml(nameLabel)}</text><text x="${x + 14}" y="494" class="metric" font-size="15">${escapeXml(percentText)}</text></g>`);
+    summary.push(detail);
+    left += width;
+  });
+  return {
+    bars: `<g clip-path="url(#language-rail)">\n      ${bars.join('\n      ')}\n    </g>`,
+    legend: legend.join('\n    '),
+    summary: `Languages by bytes in own public repositories: ${summary.join(', ')}.`,
+  };
+}
+
+const [{ total_count: merged }, activity, languages] = await Promise.all([
+  search('issues', 'is:pr is:merged'),
+  dailyCommits(),
+  languageTotals(),
+]);
 const total = activity.reduce((sum, [, count]) => sum + count, 0);
 const activeDays = activity.filter(([, count]) => count > 0).length;
+const languageMix = renderLanguages(languages);
 
 const fields = {
-  SUMMARY: `Public GitHub activity for ${account}. Merged pull requests in the last 90 complete UTC days: ${merged}. Default-branch commits in the last 28 complete UTC days: ${total} across ${activeDays} active days.`,
+  SUMMARY: `Public GitHub activity for ${account}. All-time merged pull requests: ${merged}. Default-branch commits in the last 28 complete UTC days: ${total} across ${activeDays} active days. ${languageMix.summary}`,
   PRS_MERGED: merged,
   ACTIVE_DAYS: activeDays,
   COMMITS: total,
   CHART: renderChart(activity),
+  LANGUAGE_BARS: languageMix.bars,
+  LANGUAGE_LEGEND: languageMix.legend,
   UPDATED: day(0),
 };
 const document = await readFile(template, 'utf8');

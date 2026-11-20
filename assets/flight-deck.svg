@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 566" role="img" aria-labelledby="title description">
   <title id="title">BoBoDai · Mission Control</title>
-  <desc id="description">Public GitHub activity for BoBoDai. Merged pull requests in the last 90 complete UTC days: 2. Default-branch commits in the last 28 complete UTC days: 43 across 5 active days.</desc>
+  <desc id="description">Public GitHub activity for BoBoDai. All-time merged pull requests: 101. Default-branch commits in the last 28 complete UTC days: 43 across 5 active days. Languages by bytes in own public repositories: HTML: 59.8%, Rust: 23.1%, TypeScript: 8.6%, JavaScript: 4.2%, CSS: 2.7%, Python: 1.2%, Shell: 0.4%.</desc>
   <style>
     text { font-family: ui-monospace, Menlo, Consolas, monospace; }
     .label { fill: #4d5753; font-size: 13px; letter-spacing: 1px; }
@@ -44,13 +44,14 @@
     <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(36)">
       <rect width="2" height="8" fill="#b9573d" opacity=".67"/>
     </pattern>
-    <clipPath id="card"><rect x="1" y="1" width="898" height="428" rx="18"/></clipPath>
+    <clipPath id="card"><rect x="1" y="1" width="898" height="564" rx="18"/></clipPath>
     <clipPath id="radar"><circle cx="799" cy="62" r="31"/></clipPath>
+    <clipPath id="language-rail"><rect x="48" y="431" width="804" height="20" rx="4"/></clipPath>
     <path id="spark" d="M0-7 1-1 7 0 1 1 0 7-1 1-7 0-1-1Z"/>
   </defs>
   <g clip-path="url(#card)">
-    <rect width="900" height="430" fill="url(#enamel)"/>
-    <path d="M26 126H872M26 384H872" stroke="#b2ac98"/>
+    <rect width="900" height="566" fill="url(#enamel)"/>
+    <path d="M26 126H872M26 526H872" stroke="#b2ac98"/>
     <path d="M451 28H850L873 51V109H473L451 88Z" fill="url(#viewport)" stroke="#263941" stroke-width="2"/>
     <path d="M457 34H846L867 55V103H477L457 85Z" fill="url(#stars)" stroke="#61747a"/>
     <path d="M476 83Q571 38 675 67T751 59M483 75Q600 29 697 48" stroke="#7d9ca0" stroke-opacity=".53" stroke-dasharray="2 6" fill="none"/>
@@ -95,10 +96,10 @@
 
     <text x="48" y="178" class="section">PULL REQUESTS</text>
     <rect x="261" y="168" width="20" height="7" rx="2" fill="url(#hatch)"/>
-    <text x="164" y="281" text-anchor="middle" class="metric" font-size="78">2</text>
+    <text x="164" y="281" text-anchor="middle" class="metric" font-size="78">101</text>
     <text x="164" y="308" text-anchor="middle" class="section">MERGED</text>
     <path d="M48 326H280" stroke="#c6bfb0"/>
-    <text x="48" y="356" class="label">LAST 90 DAYS</text>
+    <text x="48" y="356" class="label">ALL TIME · PUBLIC</text>
 
     <text x="337" y="178" class="section screen-title">COMMIT SIGNAL</text>
     <text x="852" y="177" text-anchor="end" class="label screen-label">5/28 DAYS ACTIVE</text>
@@ -145,9 +146,31 @@
     <text x="473" y="356" class="label screen-label">HIGH</text>
     <text x="851" y="356" text-anchor="end" class="label screen-label">43 COMMITS · 28 DAYS</text>
 
-    <circle cx="33" cy="399" r="3.3" fill="#6c8075"/>
-    <text x="46" y="404" class="label">PUBLIC DATA / DEFAULT-BRANCH COMMITS</text>
-    <text x="870" y="404" class="label" text-anchor="end">UPDATED 2026-11-20 UTC</text>
+    <path d="M28 390H860L872 402V498L860 510H28Z" fill="#f5f0e1" stroke="#9a9588"/>
+    <path d="M28 425V390H128" fill="none" stroke="#a0604c" stroke-width="1.5"/>
+    <text x="48" y="416" class="section">LANGUAGE MIX</text>
+    <text x="852" y="415" class="label" text-anchor="end">OWN PUBLIC REPOS · BYTES</text>
+    <rect x="48" y="431" width="804" height="20" rx="4" fill="#d9d2c1"/>
+    <g clip-path="url(#language-rail)">
+      <g><title>HTML: 59.8%</title><rect x="48.00" y="431" width="480.69" height="20" fill="#45687d"/></g>
+      <g><title>Rust: 23.1%</title><rect x="528.69" y="431" width="185.91" height="20" fill="#ac4e38"/></g>
+      <g><title>TypeScript: 8.6%</title><rect x="714.60" y="431" width="69.05" height="20" fill="#bc9755"/></g>
+      <g><title>JavaScript: 4.2%</title><rect x="783.66" y="431" width="33.71" height="20" fill="#66847e"/></g>
+      <g><title>CSS: 2.7%</title><rect x="817.36" y="431" width="22.06" height="20" fill="#d18a56"/></g>
+      <g><title>Python: 1.2%</title><rect x="839.42" y="431" width="9.51" height="20" fill="#80746d"/></g>
+      <g><title>Shell: 0.4%</title><rect x="848.93" y="431" width="3.07" height="20" fill="#695d73"/></g>
+    </g>
+    <g><title>HTML: 59.8%</title><rect x="48" y="466" width="9" height="9" rx="1.4" fill="#45687d"/><text x="62" y="475" class="label" style="font-size:12px;letter-spacing:0">HTML</text><text x="62" y="494" class="metric" font-size="15">59.8%</text></g>
+    <g><title>Rust: 23.1%</title><rect x="164" y="466" width="9" height="9" rx="1.4" fill="#ac4e38"/><text x="178" y="475" class="label" style="font-size:12px;letter-spacing:0">Rust</text><text x="178" y="494" class="metric" font-size="15">23.1%</text></g>
+    <g><title>TypeScript: 8.6%</title><rect x="280" y="466" width="9" height="9" rx="1.4" fill="#bc9755"/><text x="294" y="475" class="label" style="font-size:12px;letter-spacing:0">TypeScript</text><text x="294" y="494" class="metric" font-size="15">8.6%</text></g>
+    <g><title>JavaScript: 4.2%</title><rect x="396" y="466" width="9" height="9" rx="1.4" fill="#66847e"/><text x="410" y="475" class="label" style="font-size:12px;letter-spacing:0">JavaScript</text><text x="410" y="494" class="metric" font-size="15">4.2%</text></g>
+    <g><title>CSS: 2.7%</title><rect x="512" y="466" width="9" height="9" rx="1.4" fill="#d18a56"/><text x="526" y="475" class="label" style="font-size:12px;letter-spacing:0">CSS</text><text x="526" y="494" class="metric" font-size="15">2.7%</text></g>
+    <g><title>Python: 1.2%</title><rect x="628" y="466" width="9" height="9" rx="1.4" fill="#80746d"/><text x="642" y="475" class="label" style="font-size:12px;letter-spacing:0">Python</text><text x="642" y="494" class="metric" font-size="15">1.2%</text></g>
+    <g><title>Shell: 0.4%</title><rect x="744" y="466" width="9" height="9" rx="1.4" fill="#695d73"/><text x="758" y="475" class="label" style="font-size:12px;letter-spacing:0">Shell</text><text x="758" y="494" class="metric" font-size="15">0.4%</text></g>
+
+    <circle cx="33" cy="541" r="3.3" fill="#6c8075"/>
+    <text x="46" y="546" class="label">PUBLIC DATA / DEFAULT-BRANCH COMMITS</text>
+    <text x="870" y="546" class="label" text-anchor="end">UPDATED 2026-11-20 UTC</text>
   </g>
-  <rect x=".75" y=".75" width="898.5" height="428.5" rx="18" fill="none" stroke="#958f7e" stroke-width="1.5"/>
+  <rect x=".75" y=".75" width="898.5" height="564.5" rx="18" fill="none" stroke="#958f7e" stroke-width="1.5"/>
 </svg>
