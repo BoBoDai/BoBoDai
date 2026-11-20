@@ -1,1 +1,1 @@
-<img src="assets/mission-control.svg" alt="BoBoDai mission control dashboard for public pull requests and commits" width="100%">
+<img src="assets/orbital-dashboard.svg" alt="BoBoDai mission control dashboard with pull request outcomes and a daily commit heatmap" width="100%">

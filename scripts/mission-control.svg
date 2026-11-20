@@ -1,88 +1,138 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 413" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="title description">
   <title id="title">BoBoDai · Mission Control</title>
   <desc id="description">{{SUMMARY}}</desc>
   <style>
     text { font-family: ui-monospace, Menlo, Consolas, monospace; }
-    .label { fill: #a2b8c5; font-size: 13px; letter-spacing: 1px; }
-    .section { fill: #edf3f3; font-size: 17px; font-weight: 700; letter-spacing: 2px; }
-    .number { fill: #f5f4ea; font-weight: 700; }
-    .sweep { transform-origin: 796px 62px; animation: sweep 8s linear infinite; }
-    .beacon { animation: beacon 2.8s ease-in-out infinite; }
+    .label { fill: #c0bee1; font-size: 13px; letter-spacing: 1px; }
+    .section { fill: #f5f0ff; font-size: 17px; font-weight: 700; letter-spacing: 1.5px; }
+    .metric { fill: #f9f5ff; font-weight: 800; }
+    .sweep { transform-origin: 799px 62px; animation: sweep 8s linear infinite; }
+    .beacon { animation: beacon 3s ease-in-out infinite; }
     @keyframes sweep { to { transform: rotate(360deg); } }
-    @keyframes beacon { 50% { opacity: .33; } }
+    @keyframes beacon { 50% { opacity: .35; } }
     @media (prefers-reduced-motion: reduce) {
       .sweep, .beacon { animation: none; }
     }
   </style>
   <defs>
-    <linearGradient id="shell" x2="1" y2="1">
-      <stop stop-color="#101d29"/>
-      <stop offset="1" stop-color="#090f18"/>
+    <linearGradient id="space" x2="1" y2="1">
+      <stop stop-color="#141437"/>
+      <stop offset=".57" stop-color="#09091f"/>
+      <stop offset="1" stop-color="#210e34"/>
     </linearGradient>
-    <linearGradient id="bar" x2="0" y2="1">
-      <stop stop-color="#8befd7"/>
-      <stop offset="1" stop-color="#235d57"/>
+    <radialGradient id="nebula">
+      <stop stop-color="#8c49f5" stop-opacity=".54"/>
+      <stop offset=".56" stop-color="#5930be" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#5930be" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blue">
+      <stop stop-color="#268edf" stop-opacity=".36"/>
+      <stop offset="1" stop-color="#268edf" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hull">
+      <stop stop-color="#fdb26c"/>
+      <stop offset=".32" stop-color="#ce81fa"/>
+      <stop offset=".7" stop-color="#716fdc"/>
+      <stop offset="1" stop-color="#66dcec"/>
     </linearGradient>
-    <pattern id="plot-grid" width="24" height="19" patternUnits="userSpaceOnUse">
-      <path d="M24 0H0V19" fill="none" stroke="#263c47" stroke-width="1" opacity=".65"/>
+    <linearGradient id="panel" x2="0" y2="1">
+      <stop stop-color="#1b1535"/>
+      <stop offset="1" stop-color="#0c0e24"/>
+    </linearGradient>
+    <linearGradient id="word" x2="0" y2="1">
+      <stop stop-color="#fff"/>
+      <stop offset="1" stop-color="#cabaff"/>
+    </linearGradient>
+    <linearGradient id="heat" x2="1" y2="1">
+      <stop stop-color="#c0fbff"/>
+      <stop offset="1" stop-color="#70bdff"/>
+    </linearGradient>
+    <pattern id="stars" width="137" height="89" patternUnits="userSpaceOnUse">
+      <circle cx="11" cy="18" r=".8" fill="#b3bafd" opacity=".67"/>
+      <circle cx="39" cy="72" r="1.15" fill="#dde1ff" opacity=".53"/>
+      <circle cx="86" cy="49" r=".65" fill="#d490ff" opacity=".65"/>
+      <circle cx="111" cy="14" r=".72" fill="#a2dbff" opacity=".7"/>
+      <circle cx="127" cy="81" r=".62" fill="#a2dbff" opacity=".55"/>
     </pattern>
-    <clipPath id="radar"><circle cx="796" cy="62" r="29"/></clipPath>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(36)">
+      <rect width="2" height="8" fill="#ffad6d" opacity=".67"/>
+    </pattern>
+    <clipPath id="card"><rect x="1" y="1" width="898" height="428" rx="18"/></clipPath>
+    <clipPath id="radar"><circle cx="799" cy="62" r="31"/></clipPath>
+    <path id="spark" d="M0-7 1-1 7 0 1 1 0 7-1 1-7 0-1-1Z"/>
   </defs>
-
-  <rect x=".75" y=".75" width="898.5" height="411.5" rx="17" fill="url(#shell)" stroke="#52636c" stroke-width="1.5"/>
-  <path d="M28 114H872" stroke="#455464"/>
-  <path d="M30 114H180M187 114H200" stroke="#ffad61" stroke-width="2"/>
-
-  <rect x="30" y="28" width="5" height="59" rx="2" fill="#ffad61"/>
-  <text x="48" y="48" font-size="13" font-weight="700" letter-spacing="3.4" fill="#ffbb7b">MISSION CONTROL</text>
-  <text x="46" y="88" class="number" font-size="45" letter-spacing="-2">BoBoDai</text>
-  <g transform="translate(273 42)">
-    <path d="M0 8H20M0 17H34M0 26H14M0 35H26" stroke="#526877" stroke-width="2"/>
-  </g>
-
-  <g fill="none" stroke="#496b71" stroke-width="1">
-    <circle cx="796" cy="62" r="31"/>
-    <circle cx="796" cy="62" r="20"/>
-    <circle cx="796" cy="62" r="10"/>
-    <path d="M765 62H827M796 31V93" opacity=".72"/>
-    <ellipse cx="796" cy="62" rx="46" ry="15" transform="rotate(-24 796 62)" stroke-dasharray="3 4" opacity=".65"/>
-  </g>
-  <g clip-path="url(#radar)">
-    <g class="sweep">
-      <path d="M796 62L770 48A29 29 0 0 1 796 33Z" fill="#67dbba" opacity=".23"/>
-      <path d="M796 62V33" stroke="#85ead0" stroke-width="1.45"/>
+  <g clip-path="url(#card)">
+    <rect width="900" height="430" fill="url(#space)"/>
+    <ellipse cx="600" cy="79" rx="332" ry="126" fill="url(#nebula)" transform="rotate(-9 600 79)"/>
+    <ellipse cx="818" cy="365" rx="180" ry="125" fill="url(#blue)"/>
+    <rect width="900" height="430" fill="url(#stars)"/>
+    <path d="M300 93C426 22 522 19 645 41S774 34 883 3M370 99C455 55 543 57 642 72" stroke="#b682f8" stroke-opacity=".34" stroke-dasharray="2 6" fill="none"/>
+    <path d="M463 74l34-29 48 17 73-30" stroke="#b88cf2" stroke-opacity=".36" fill="none"/>
+    <g fill="#dce2ff">
+      <use href="#spark" transform="translate(463 74) scale(.49)"/>
+      <use class="beacon" href="#spark" transform="translate(497 45) scale(.9)"/>
+      <use href="#spark" transform="translate(545 62) scale(.54)"/>
+      <use href="#spark" transform="translate(618 32) scale(.65)"/>
+      <use href="#spark" transform="translate(678 88) scale(.42)"/>
     </g>
-    <circle cx="807" cy="52" r="2" fill="#ffad61"/>
+
+    <path d="M31 30H39V94H31Z" fill="#ffad6d"/>
+    <text x="53" y="49" font-size="14" font-weight="800" letter-spacing="3.4" fill="#ffc28e">MISSION CONTROL</text>
+    <text x="50" y="95" class="metric" style="fill:url(#word)" font-size="54" letter-spacing="-2.6">BoBoDai</text>
+    <rect x="304" y="79" width="56" height="7" rx="1" fill="url(#hatch)"/>
+
+    <g fill="none" stroke="#776fae">
+      <circle cx="799" cy="62" r="35"/>
+      <circle cx="799" cy="62" r="23"/>
+      <circle cx="799" cy="62" r="11"/>
+      <path d="M764 62H834M799 27V97" opacity=".63"/>
+      <ellipse cx="799" cy="62" rx="53" ry="17" transform="rotate(-28 799 62)" stroke="#df94e9" stroke-dasharray="3 3"/>
+    </g>
+    <g clip-path="url(#radar)">
+      <g class="sweep">
+        <path d="M799 62L771 50A31 31 0 0 1 799 31Z" fill="#6ce6f6" opacity=".32"/>
+        <path d="M799 62V31" stroke="#a6f6ff" stroke-width="1.7"/>
+      </g>
+      <circle class="beacon" cx="810" cy="54" r="2.6" fill="#ffad6d"/>
+    </g>
+    <path d="M27 113H235L247 125H872" fill="none" stroke="url(#hull)" stroke-width="1.5"/>
+
+    <path d="M28 152H285L300 167V365L288 377H28Z" fill="url(#panel)" stroke="#625388"/>
+    <path d="M316 167L331 152H872V365L860 377H316Z" fill="url(#panel)" stroke="#625388"/>
+    <path d="M28 203V152H112M316 194V167L331 152H418" fill="none" stroke="#ac82f5" stroke-width="1.5"/>
+    <path d="M46 191H282M335 191H853" stroke="#4b406c"/>
+
+    <text x="48" y="178" class="section">PR OUTCOMES</text>
+    <rect x="261" y="168" width="20" height="7" rx="2" fill="url(#hatch)"/>
+    <path d="M48 246H280M48 289H280" stroke="#33294c"/>
+    <path d="M48 217h4v14h-4z" fill="#92edff"/>
+    <path d="M48 260h4v14h-4z" fill="#ffad6d"/>
+    <path d="M48 303h4v14h-4z" fill="#d591ff"/>
+    <text x="62" y="230" class="label">MERGED</text>
+    <text x="62" y="273" class="label">CLOSED UNMERGED</text>
+    <text x="62" y="316" class="label">MERGE RATE</text>
+    <text x="280" y="233" text-anchor="end" class="metric" font-size="25">{{PRS_MERGED}}</text>
+    <text x="280" y="276" text-anchor="end" class="metric" font-size="25">{{PRS_UNMERGED}}</text>
+    <text x="280" y="319" text-anchor="end" class="metric" font-size="25">{{MERGE_RATE}}</text>
+    <text x="48" y="356" class="label" fill="#d0b2de">LAST 90 DAYS</text>
+
+    <text x="337" y="178" class="section">COMMIT SIGNAL</text>
+    <text x="852" y="177" text-anchor="end" class="label">{{ACTIVE_DAYS}}/28 DAYS ACTIVE</text>
+    {{CHART}}
+    <text x="337" y="356" class="label">LOW</text>
+    <g transform="translate(373 344)">
+      <rect width="13" height="13" rx="2" fill="#231d3b" stroke="#483960"/>
+      <rect x="19" width="13" height="13" rx="2" fill="#5b3787"/>
+      <rect x="38" width="13" height="13" rx="2" fill="#9258c3"/>
+      <rect x="57" width="13" height="13" rx="2" fill="#a381f4"/>
+      <rect x="76" width="13" height="13" rx="2" fill="url(#heat)"/>
+    </g>
+    <text x="473" y="356" class="label">HIGH</text>
+    <text x="851" y="356" text-anchor="end" class="label">{{COMMITS}} COMMITS · 28 DAYS</text>
+
+    <circle cx="33" cy="399" r="3.3" fill="#8ce8ff"/>
+    <text x="46" y="404" class="label">PUBLIC DATA / DEFAULT-BRANCH COMMITS</text>
+    <text x="870" y="404" class="label" text-anchor="end">UPDATED {{UPDATED}} UTC</text>
   </g>
-  <path d="M846 39h12m-12 7h18m-18 7h8m-8 7h12m-12 7h8m-8 7h18m-18 7h12" stroke="#57717f" stroke-width="1.3"/>
-
-  <rect x="28" y="137" width="270" height="218" rx="8" fill="#0d1722" stroke="#344652"/>
-  <rect x="313" y="137" width="559" height="218" rx="8" fill="#0d1722" stroke="#344652"/>
-  <path d="M43 177H283M328 177H857" stroke="#364c59"/>
-
-  <text x="46" y="161" class="section">PULL REQUESTS</text>
-  <circle class="beacon" cx="274" cy="155" r="3.5" fill="#ffad61"/>
-  <path d="M46 229H280M46 279H280" stroke="#253845"/>
-  <circle cx="49" cy="205" r="3" fill="#ffad61"/>
-  <circle cx="49" cy="255" r="3" fill="#f4e8c5"/>
-  <circle cx="49" cy="305" r="3" fill="#83e6c9"/>
-  <text x="61" y="210" class="label">OPEN NOW</text>
-  <text x="61" y="260" class="label">OPENED · 28D</text>
-  <text x="61" y="310" class="label">MERGED · 28D</text>
-  <g class="number" text-anchor="end" font-size="31">
-    <text x="275" y="215">{{PRS_OPEN}}</text>
-    <text x="275" y="265">{{PRS_OPENED}}</text>
-    <text x="275" y="315">{{PRS_MERGED}}</text>
-  </g>
-
-  <text x="331" y="161" class="section">COMMITS</text>
-  <text x="716" y="160" class="label" text-anchor="end">28D TOTAL</text>
-  <text x="853" y="164" class="number" font-size="28" text-anchor="end">{{COMMITS}}</text>
-  <rect x="332" y="204" width="520" height="105" fill="url(#plot-grid)" stroke="#344652"/>
-  <path d="M332 309H852" stroke="#5b7c84"/>
-  {{CHART}}
-
-  <circle cx="32" cy="382" r="3" fill="#83e6c9"/>
-  <text x="43" y="387" class="label">PUBLIC DATA / DEFAULT-BRANCH COMMITS</text>
-  <text x="870" y="387" class="label" text-anchor="end">UPDATED {{UPDATED}} UTC</text>
+  <rect x=".75" y=".75" width="898.5" height="428.5" rx="18" fill="none" stroke="url(#hull)" stroke-opacity=".67" stroke-width="1.5"/>
 </svg>

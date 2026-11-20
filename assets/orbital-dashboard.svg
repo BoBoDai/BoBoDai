@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="title description">
+  <title id="title">BoBoDai · Mission Control</title>
+  <desc id="description">Public GitHub activity for BoBoDai. In the last 90 complete UTC days, 2 pull requests merged and 4 closed without merging. Merge rate among these outcomes: 33%. In the last 28 complete UTC days, 43 default-branch commits across 5 active days.</desc>
+  <style>
+    text { font-family: ui-monospace, Menlo, Consolas, monospace; }
+    .label { fill: #c0bee1; font-size: 13px; letter-spacing: 1px; }
+    .section { fill: #f5f0ff; font-size: 17px; font-weight: 700; letter-spacing: 1.5px; }
+    .metric { fill: #f9f5ff; font-weight: 800; }
+    .sweep { transform-origin: 799px 62px; animation: sweep 8s linear infinite; }
+    .beacon { animation: beacon 3s ease-in-out infinite; }
+    @keyframes sweep { to { transform: rotate(360deg); } }
+    @keyframes beacon { 50% { opacity: .35; } }
+    @media (prefers-reduced-motion: reduce) {
+      .sweep, .beacon { animation: none; }
+    }
+  </style>
+  <defs>
+    <linearGradient id="space" x2="1" y2="1">
+      <stop stop-color="#141437"/>
+      <stop offset=".57" stop-color="#09091f"/>
+      <stop offset="1" stop-color="#210e34"/>
+    </linearGradient>
+    <radialGradient id="nebula">
+      <stop stop-color="#8c49f5" stop-opacity=".54"/>
+      <stop offset=".56" stop-color="#5930be" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#5930be" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blue">
+      <stop stop-color="#268edf" stop-opacity=".36"/>
+      <stop offset="1" stop-color="#268edf" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hull">
+      <stop stop-color="#fdb26c"/>
+      <stop offset=".32" stop-color="#ce81fa"/>
+      <stop offset=".7" stop-color="#716fdc"/>
+      <stop offset="1" stop-color="#66dcec"/>
+    </linearGradient>
+    <linearGradient id="panel" x2="0" y2="1">
+      <stop stop-color="#1b1535"/>
+      <stop offset="1" stop-color="#0c0e24"/>
+    </linearGradient>
+    <linearGradient id="word" x2="0" y2="1">
+      <stop stop-color="#fff"/>
+      <stop offset="1" stop-color="#cabaff"/>
+    </linearGradient>
+    <linearGradient id="heat" x2="1" y2="1">
+      <stop stop-color="#c0fbff"/>
+      <stop offset="1" stop-color="#70bdff"/>
+    </linearGradient>
+    <pattern id="stars" width="137" height="89" patternUnits="userSpaceOnUse">
+      <circle cx="11" cy="18" r=".8" fill="#b3bafd" opacity=".67"/>
+      <circle cx="39" cy="72" r="1.15" fill="#dde1ff" opacity=".53"/>
+      <circle cx="86" cy="49" r=".65" fill="#d490ff" opacity=".65"/>
+      <circle cx="111" cy="14" r=".72" fill="#a2dbff" opacity=".7"/>
+      <circle cx="127" cy="81" r=".62" fill="#a2dbff" opacity=".55"/>
+    </pattern>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(36)">
+      <rect width="2" height="8" fill="#ffad6d" opacity=".67"/>
+    </pattern>
+    <clipPath id="card"><rect x="1" y="1" width="898" height="428" rx="18"/></clipPath>
+    <clipPath id="radar"><circle cx="799" cy="62" r="31"/></clipPath>
+    <path id="spark" d="M0-7 1-1 7 0 1 1 0 7-1 1-7 0-1-1Z"/>
+  </defs>
+  <g clip-path="url(#card)">
+    <rect width="900" height="430" fill="url(#space)"/>
+    <ellipse cx="600" cy="79" rx="332" ry="126" fill="url(#nebula)" transform="rotate(-9 600 79)"/>
+    <ellipse cx="818" cy="365" rx="180" ry="125" fill="url(#blue)"/>
+    <rect width="900" height="430" fill="url(#stars)"/>
+    <path d="M300 93C426 22 522 19 645 41S774 34 883 3M370 99C455 55 543 57 642 72" stroke="#b682f8" stroke-opacity=".34" stroke-dasharray="2 6" fill="none"/>
+    <path d="M463 74l34-29 48 17 73-30" stroke="#b88cf2" stroke-opacity=".36" fill="none"/>
+    <g fill="#dce2ff">
+      <use href="#spark" transform="translate(463 74) scale(.49)"/>
+      <use class="beacon" href="#spark" transform="translate(497 45) scale(.9)"/>
+      <use href="#spark" transform="translate(545 62) scale(.54)"/>
+      <use href="#spark" transform="translate(618 32) scale(.65)"/>
+      <use href="#spark" transform="translate(678 88) scale(.42)"/>
+    </g>
+
+    <path d="M31 30H39V94H31Z" fill="#ffad6d"/>
+    <text x="53" y="49" font-size="14" font-weight="800" letter-spacing="3.4" fill="#ffc28e">MISSION CONTROL</text>
+    <text x="50" y="95" class="metric" style="fill:url(#word)" font-size="54" letter-spacing="-2.6">BoBoDai</text>
+    <rect x="304" y="79" width="56" height="7" rx="1" fill="url(#hatch)"/>
+
+    <g fill="none" stroke="#776fae">
+      <circle cx="799" cy="62" r="35"/>
+      <circle cx="799" cy="62" r="23"/>
+      <circle cx="799" cy="62" r="11"/>
+      <path d="M764 62H834M799 27V97" opacity=".63"/>
+      <ellipse cx="799" cy="62" rx="53" ry="17" transform="rotate(-28 799 62)" stroke="#df94e9" stroke-dasharray="3 3"/>
+    </g>
+    <g clip-path="url(#radar)">
+      <g class="sweep">
+        <path d="M799 62L771 50A31 31 0 0 1 799 31Z" fill="#6ce6f6" opacity=".32"/>
+        <path d="M799 62V31" stroke="#a6f6ff" stroke-width="1.7"/>
+      </g>
+      <circle class="beacon" cx="810" cy="54" r="2.6" fill="#ffad6d"/>
+    </g>
+    <path d="M27 113H235L247 125H872" fill="none" stroke="url(#hull)" stroke-width="1.5"/>
+
+    <path d="M28 152H285L300 167V365L288 377H28Z" fill="url(#panel)" stroke="#625388"/>
+    <path d="M316 167L331 152H872V365L860 377H316Z" fill="url(#panel)" stroke="#625388"/>
+    <path d="M28 203V152H112M316 194V167L331 152H418" fill="none" stroke="#ac82f5" stroke-width="1.5"/>
+    <path d="M46 191H282M335 191H853" stroke="#4b406c"/>
+
+    <text x="48" y="178" class="section">PR OUTCOMES</text>
+    <rect x="261" y="168" width="20" height="7" rx="2" fill="url(#hatch)"/>
+    <path d="M48 246H280M48 289H280" stroke="#33294c"/>
+    <path d="M48 217h4v14h-4z" fill="#92edff"/>
+    <path d="M48 260h4v14h-4z" fill="#ffad6d"/>
+    <path d="M48 303h4v14h-4z" fill="#d591ff"/>
+    <text x="62" y="230" class="label">MERGED</text>
+    <text x="62" y="273" class="label">CLOSED UNMERGED</text>
+    <text x="62" y="316" class="label">MERGE RATE</text>
+    <text x="280" y="233" text-anchor="end" class="metric" font-size="25">2</text>
+    <text x="280" y="276" text-anchor="end" class="metric" font-size="25">4</text>
+    <text x="280" y="319" text-anchor="end" class="metric" font-size="25">33%</text>
+    <text x="48" y="356" class="label" fill="#d0b2de">LAST 90 DAYS</text>
+
+    <text x="337" y="178" class="section">COMMIT SIGNAL</text>
+    <text x="852" y="177" text-anchor="end" class="label">5/28 DAYS ACTIVE</text>
+    <text x="338" y="223" class="label">10.23</text>
+    <g><title>2026-10-23 UTC: 0 commits</title><rect x="405" y="205" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-10-24 UTC: 0 commits</title><rect x="469" y="205" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-10-25 UTC: 0 commits</title><rect x="533" y="205" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-10-26 UTC: 12 commits</title><rect x="597" y="205" width="56" height="26" rx="4" fill="#a381f4" stroke="#5e487b"/><text x="625" y="223" text-anchor="middle" font-size="13" font-weight="700" fill="#100d2d">12</text></g>
+    <g><title>2026-10-27 UTC: 21 commits</title><rect x="661" y="205" width="56" height="26" rx="4" fill="url(#heat)" stroke="#5e487b"/><text x="689" y="223" text-anchor="middle" font-size="13" font-weight="700" fill="#100d2d">21</text></g>
+    <g><title>2026-10-28 UTC: 4 commits</title><rect x="725" y="205" width="56" height="26" rx="4" fill="#5b3787" stroke="#5e487b"/><text x="753" y="223" text-anchor="middle" font-size="13" font-weight="700" fill="#faf6ff">4</text></g>
+    <g><title>2026-10-29 UTC: 0 commits</title><rect x="789" y="205" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <text x="338" y="255" class="label">10.30</text>
+    <g><title>2026-10-30 UTC: 0 commits</title><rect x="405" y="237" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-10-31 UTC: 0 commits</title><rect x="469" y="237" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-11-01 UTC: 0 commits</title><rect x="533" y="237" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-11-02 UTC: 0 commits</title><rect x="597" y="237" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-11-03 UTC: 0 commits</title><rect x="661" y="237" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-11-04 UTC: 0 commits</title><rect x="725" y="237" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-11-05 UTC: 0 commits</title><rect x="789" y="237" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <text x="338" y="287" class="label">11.06</text>
+    <g><title>2026-11-06 UTC: 0 commits</title><rect x="405" y="269" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-11-07 UTC: 0 commits</title><rect x="469" y="269" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-11-08 UTC: 0 commits</title><rect x="533" y="269" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-11-09 UTC: 5 commits</title><rect x="597" y="269" width="56" height="26" rx="4" fill="#5b3787" stroke="#5e487b"/><text x="625" y="287" text-anchor="middle" font-size="13" font-weight="700" fill="#faf6ff">5</text></g>
+    <g><title>2026-11-10 UTC: 1 commit</title><rect x="661" y="269" width="56" height="26" rx="4" fill="#5b3787" stroke="#5e487b"/><text x="689" y="287" text-anchor="middle" font-size="13" font-weight="700" fill="#faf6ff">1</text></g>
+    <g><title>2026-11-11 UTC: 0 commits</title><rect x="725" y="269" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-11-12 UTC: 0 commits</title><rect x="789" y="269" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <text x="338" y="319" class="label">11.13</text>
+    <g><title>2026-11-13 UTC: 0 commits</title><rect x="405" y="301" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-11-14 UTC: 0 commits</title><rect x="469" y="301" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-11-15 UTC: 0 commits</title><rect x="533" y="301" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-11-16 UTC: 0 commits</title><rect x="597" y="301" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-11-17 UTC: 0 commits</title><rect x="661" y="301" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-11-18 UTC: 0 commits</title><rect x="725" y="301" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <g><title>2026-11-19 UTC: 0 commits</title><rect x="789" y="301" width="56" height="26" rx="4" fill="#231d3b" stroke="#5e487b"/></g>
+    <text x="337" y="356" class="label">LOW</text>
+    <g transform="translate(373 344)">
+      <rect width="13" height="13" rx="2" fill="#231d3b" stroke="#483960"/>
+      <rect x="19" width="13" height="13" rx="2" fill="#5b3787"/>
+      <rect x="38" width="13" height="13" rx="2" fill="#9258c3"/>
+      <rect x="57" width="13" height="13" rx="2" fill="#a381f4"/>
+      <rect x="76" width="13" height="13" rx="2" fill="url(#heat)"/>
+    </g>
+    <text x="473" y="356" class="label">HIGH</text>
+    <text x="851" y="356" text-anchor="end" class="label">43 COMMITS · 28 DAYS</text>
+
+    <circle cx="33" cy="399" r="3.3" fill="#8ce8ff"/>
+    <text x="46" y="404" class="label">PUBLIC DATA / DEFAULT-BRANCH COMMITS</text>
+    <text x="870" y="404" class="label" text-anchor="end">UPDATED 2026-11-20 UTC</text>
+  </g>
+  <rect x=".75" y=".75" width="898.5" height="428.5" rx="18" fill="none" stroke="url(#hull)" stroke-opacity=".67" stroke-width="1.5"/>
+</svg>

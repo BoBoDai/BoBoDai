@@ -3,18 +3,18 @@ import { setTimeout as delay } from 'node:timers/promises';
 
 const account = 'BoBoDai';
 const template = new URL('./mission-control.svg', import.meta.url);
-const output = new URL('../assets/mission-control.svg', import.meta.url);
+const output = new URL('../assets/orbital-dashboard.svg', import.meta.url);
 const dayMs = 86_400_000;
 const now = new Date();
 const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
 const day = offset => new Date(today + offset * dayMs).toISOString().slice(0, 10);
-const weeks = [-28, -21, -14, -7].map(offset => ({
-  start: day(offset),
-  end: day(offset + 6),
-}));
 
-async function count(endpoint, qualifier) {
-  const query = new URLSearchParams({ q: `author:${account} is:public ${qualifier}`, per_page: '1' });
+async function search(endpoint, qualifier, perPage = 1, page = 1) {
+  const query = new URLSearchParams({
+    q: `author:${account} is:public ${qualifier}`,
+    per_page: String(perPage),
+    page: String(page),
+  });
   const url = `https://api.github.com/search/${endpoint}?${query}`;
   for (const wait of [0, 3_000, 65_000]) {
     if (wait) await delay(wait);
@@ -27,44 +27,71 @@ async function count(endpoint, qualifier) {
       if ([403, 429, 502, 503, 504].includes(response.status)) continue;
       throw new Error(`GitHub search returned ${response.status} for ${qualifier}`);
     }
-    const { total_count: total, incomplete_results: incomplete } = await response.json();
-    if (!incomplete && Number.isSafeInteger(total) && total >= 0) return total;
+    const result = await response.json();
+    if (!result.incomplete_results && Number.isSafeInteger(result.total_count)
+        && result.total_count >= 0 && Array.isArray(result.items)) return result;
   }
   throw new Error(`No complete GitHub search result for ${qualifier}`);
 }
 
-function renderChart(activity) {
-  const peak = Math.max(1, ...activity.map(week => week.total));
-  return activity.map(({ start, end, total }, index) => {
-    const x = 397 + 130 * index;
-    const top = 309 - Math.round(84 * total / peak);
-    const bar = total
-      ? `<rect x="${x - 35}" y="${top}" width="70" height="${309 - top}" rx="3" fill="url(#bar)"/>`
-      : `<path d="M${x - 35} 308h70" stroke="#5b7c84"/>`;
-    return `<g text-anchor="middle">
-      ${bar}
-      <text x="${x}" y="${top - 7}" class="number" font-size="15">${total}</text>
-      <text x="${x}" y="334" class="label" font-size="12">${start.slice(5)} – ${end.slice(5)}</text>
-    </g>`;
-  }).join('\n  ');
+async function dailyCommits() {
+  const totals = new Map(Array.from({ length: 28 }, (_, index) => [day(index - 28), 0]));
+  const range = `author-date:${day(-28)}T00:00:00Z..${day(-1)}T23:59:59Z`;
+  const pageSize = 100;
+  const first = await search('commits', range, pageSize);
+  if (first.total_count > 1_000) throw new Error('Commit search exceeded its 1,000-result limit');
+
+  let result = first;
+  for (let page = 1; page <= Math.max(1, Math.ceil(first.total_count / pageSize)); page++) {
+    if (page > 1) result = await search('commits', range, pageSize, page);
+    for (const { commit } of result.items) {
+      const date = new Date(commit.author.date).toISOString().slice(0, 10);
+      if (!totals.has(date)) throw new Error(`Commit dated ${date} outside the UTC window`);
+      totals.set(date, totals.get(date) + 1);
+    }
+  }
+  return [...totals.entries()];
 }
 
-const window = `${weeks[0].start}..${weeks.at(-1).end}`;
-const open = await count('issues', 'is:pr is:open');
-const opened = await count('issues', `is:pr created:${window}`);
-const merged = await count('issues', `is:pr is:merged merged:${window}`);
-for (const week of weeks) {
-  week.total = await count('commits', `author-date:${week.start}..${week.end}`);
+const heat = ['#231d3b', '#5b3787', '#9258c3', '#a381f4', 'url(#heat)'];
+
+function renderChart(activity) {
+  const peak = Math.max(1, ...activity.map(([, count]) => count));
+  const rows = [];
+  for (let row = 0; row < 4; row++) {
+    const week = activity.slice(row * 7, row * 7 + 7);
+    const y = 205 + 32 * row;
+    const cells = week.map(([date, count], column) => {
+      const x = 405 + 64 * column;
+      const level = Math.ceil(4 * count / peak);
+      const content = count
+        ? `<text x="${x + 28}" y="${y + 18}" text-anchor="middle" font-size="13" font-weight="700" fill="${level > 2 ? '#100d2d' : '#faf6ff'}">${count}</text>`
+        : '';
+      return `<g><title>${date} UTC: ${count} ${count === 1 ? 'commit' : 'commits'}</title><rect x="${x}" y="${y}" width="56" height="26" rx="4" fill="${heat[level]}" stroke="#5e487b"/>${content}</g>`;
+    }).join('\n    ');
+    const start = week[0][0].slice(5).replace('-', '.');
+    rows.push(`<text x="338" y="${y + 18}" class="label">${start}</text>\n    ${cells}`);
+  }
+  return rows.join('\n    ');
 }
-const total = weeks.reduce((sum, week) => sum + week.total, 0);
+
+const window = `${day(-90)}..${day(-1)}`;
+const { total_count: merged } = await search('issues', `is:pr is:merged merged:${window}`);
+const { total_count: unmerged } = await search('issues', `is:pr is:closed is:unmerged closed:${window}`);
+const resolved = merged + unmerged;
+const rate = resolved ? `${Math.round(100 * merged / resolved)}%` : '—';
+const activity = await dailyCommits();
+const total = activity.reduce((sum, [, count]) => sum + count, 0);
+const activeDays = activity.filter(([, count]) => count > 0).length;
 
 const fields = {
-  SUMMARY: `Public GitHub activity for ${account}. Pull requests: ${open} currently open, ${opened} opened and ${merged} merged in the last 28 complete UTC days. Default-branch commits in that same period: ${total}.`,
-  PRS_OPEN: open,
-  PRS_OPENED: opened,
+  SUMMARY: `Public GitHub activity for ${account}. In the last 90 complete UTC days, ${merged} pull requests merged and ${unmerged} closed without merging. Merge rate among these outcomes: ${rate}. In the last 28 complete UTC days, ${total} default-branch commits across ${activeDays} active days.`,
   PRS_MERGED: merged,
+  PRS_UNMERGED: unmerged,
+  MERGE_RATE: rate,
+  ACTIVE_DAYS: activeDays,
   COMMITS: total,
-  CHART: renderChart(weeks),
+  CHART: renderChart(activity),
   UPDATED: day(0),
 };
 const document = await readFile(template, 'utf8');
