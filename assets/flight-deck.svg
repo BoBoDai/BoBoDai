@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 566" role="img" aria-labelledby="title description">
   <title id="title">BoBoDai · Mission Control</title>
-  <desc id="description">Public GitHub activity for BoBoDai. All-time merged pull requests: 101. Default-branch commits in the last 28 complete UTC days: 43 across 5 active days. Languages by bytes in own public repositories, excluding HTML: Rust: 57.5%, TypeScript: 21.4%, JavaScript: 10.4%, CSS: 6.8%, Python: 2.9%, Shell: 1.0%.</desc>
+  <desc id="description">Public GitHub activity for BoBoDai. All-time merged pull requests: 102. Default-branch commits in the last 28 complete UTC days: 43 across 5 active days. Languages by bytes in own public repositories, excluding HTML: Rust: 57.5%, TypeScript: 21.4%, JavaScript: 10.4%, CSS: 6.8%, Python: 2.9%, Shell: 1.0%.</desc>
   <style>
     text { font-family: ui-monospace, Menlo, Consolas, monospace; }
     .label { fill: #4d5753; font-size: 13px; letter-spacing: 1px; }
@@ -96,7 +96,7 @@
 
     <text x="48" y="178" class="section">PULL REQUESTS</text>
     <rect x="261" y="168" width="20" height="7" rx="2" fill="url(#hatch)"/>
-    <text x="164" y="281" text-anchor="middle" class="metric" font-size="78">101</text>
+    <text x="164" y="281" text-anchor="middle" class="metric" font-size="78">102</text>
     <text x="164" y="308" text-anchor="middle" class="section">MERGED</text>
     <path d="M48 326H280" stroke="#c6bfb0"/>
     <text x="48" y="356" class="label">ALL TIME · PUBLIC</text>
