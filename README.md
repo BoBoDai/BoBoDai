@@ -1,1 +1,1 @@
-<img src="assets/aurora.svg" alt="BoBoDai against a moving neon aurora" width="100%">
+<img src="assets/mission-control.svg" alt="BoBoDai mission control dashboard for public pull requests and commits" width="100%">
