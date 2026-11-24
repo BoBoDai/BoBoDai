@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 566" role="img" aria-labelledby="title description">
   <title id="title">BoBoDai · Mission Control</title>
-  <desc id="description">Public GitHub activity for BoBoDai. All-time merged pull requests: 102. Default-branch commits in the last 28 complete UTC days: 56 across 6 active days. Languages by bytes in own public repositories, excluding HTML: Rust: 57.5%, TypeScript: 21.4%, JavaScript: 10.4%, CSS: 6.8%, Python: 2.9%, Shell: 1.0%.</desc>
+  <desc id="description">Public GitHub activity for BoBoDai. All-time merged pull requests: 102. Default-branch commits in the last 28 complete UTC days: 44 across 5 active days. Languages by bytes in own public repositories, excluding HTML: Rust: 57.5%, TypeScript: 21.4%, JavaScript: 10.4%, CSS: 6.8%, Python: 2.9%, Shell: 1.0%.</desc>
   <style>
     text { font-family: ui-monospace, Menlo, Consolas, monospace; }
     .label { fill: #4d5753; font-size: 13px; letter-spacing: 1px; }
@@ -102,39 +102,39 @@
     <text x="48" y="356" class="label">ALL TIME · PUBLIC</text>
 
     <text x="337" y="178" class="section screen-title">COMMIT SIGNAL</text>
-    <text x="852" y="177" text-anchor="end" class="label screen-label">6/28 DAYS ACTIVE</text>
-    <text x="338" y="223" class="label screen-label">10.25</text>
-    <g><title>2026-10-25 UTC: 0 commits</title><rect x="405" y="205" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-10-26 UTC: 12 commits</title><rect x="469" y="205" width="56" height="26" rx="4" fill="#bf985d" stroke="#526369"/><text x="497" y="223" text-anchor="middle" font-size="13" font-weight="700" fill="#19252c">12</text></g>
-    <g><title>2026-10-27 UTC: 21 commits</title><rect x="533" y="205" width="56" height="26" rx="4" fill="url(#heat)" stroke="#526369"/><text x="561" y="223" text-anchor="middle" font-size="13" font-weight="700" fill="#19252c">21</text></g>
-    <g><title>2026-10-28 UTC: 4 commits</title><rect x="597" y="205" width="56" height="26" rx="4" fill="#42677a" stroke="#526369"/><text x="625" y="223" text-anchor="middle" font-size="13" font-weight="700" fill="#fff7e0">4</text></g>
-    <g><title>2026-10-29 UTC: 0 commits</title><rect x="661" y="205" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-10-30 UTC: 0 commits</title><rect x="725" y="205" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-10-31 UTC: 0 commits</title><rect x="789" y="205" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <text x="338" y="255" class="label screen-label">11.01</text>
-    <g><title>2026-11-01 UTC: 0 commits</title><rect x="405" y="237" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-11-02 UTC: 0 commits</title><rect x="469" y="237" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-11-03 UTC: 0 commits</title><rect x="533" y="237" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-11-04 UTC: 0 commits</title><rect x="597" y="237" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-11-05 UTC: 0 commits</title><rect x="661" y="237" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-11-06 UTC: 0 commits</title><rect x="725" y="237" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-11-07 UTC: 0 commits</title><rect x="789" y="237" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <text x="338" y="287" class="label screen-label">11.08</text>
-    <g><title>2026-11-08 UTC: 0 commits</title><rect x="405" y="269" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-11-09 UTC: 5 commits</title><rect x="469" y="269" width="56" height="26" rx="4" fill="#42677a" stroke="#526369"/><text x="497" y="287" text-anchor="middle" font-size="13" font-weight="700" fill="#fff7e0">5</text></g>
-    <g><title>2026-11-10 UTC: 1 commit</title><rect x="533" y="269" width="56" height="26" rx="4" fill="#42677a" stroke="#526369"/><text x="561" y="287" text-anchor="middle" font-size="13" font-weight="700" fill="#fff7e0">1</text></g>
-    <g><title>2026-11-11 UTC: 0 commits</title><rect x="597" y="269" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-11-12 UTC: 0 commits</title><rect x="661" y="269" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-11-13 UTC: 0 commits</title><rect x="725" y="269" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-11-14 UTC: 0 commits</title><rect x="789" y="269" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <text x="338" y="319" class="label screen-label">11.15</text>
-    <g><title>2026-11-15 UTC: 0 commits</title><rect x="405" y="301" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-11-16 UTC: 0 commits</title><rect x="469" y="301" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-11-17 UTC: 0 commits</title><rect x="533" y="301" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-11-18 UTC: 0 commits</title><rect x="597" y="301" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-11-19 UTC: 0 commits</title><rect x="661" y="301" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
-    <g><title>2026-11-20 UTC: 13 commits</title><rect x="725" y="301" width="56" height="26" rx="4" fill="#bf985d" stroke="#526369"/><text x="753" y="319" text-anchor="middle" font-size="13" font-weight="700" fill="#19252c">13</text></g>
-    <g><title>2026-11-21 UTC: 0 commits</title><rect x="789" y="301" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <text x="852" y="177" text-anchor="end" class="label screen-label">5/28 DAYS ACTIVE</text>
+    <text x="338" y="223" class="label screen-label">10.27</text>
+    <g><title>2026-10-27 UTC: 21 commits</title><rect x="405" y="205" width="56" height="26" rx="4" fill="url(#heat)" stroke="#526369"/><text x="433" y="223" text-anchor="middle" font-size="13" font-weight="700" fill="#19252c">21</text></g>
+    <g><title>2026-10-28 UTC: 4 commits</title><rect x="469" y="205" width="56" height="26" rx="4" fill="#42677a" stroke="#526369"/><text x="497" y="223" text-anchor="middle" font-size="13" font-weight="700" fill="#fff7e0">4</text></g>
+    <g><title>2026-10-29 UTC: 0 commits</title><rect x="533" y="205" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-10-30 UTC: 0 commits</title><rect x="597" y="205" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-10-31 UTC: 0 commits</title><rect x="661" y="205" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-01 UTC: 0 commits</title><rect x="725" y="205" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-02 UTC: 0 commits</title><rect x="789" y="205" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <text x="338" y="255" class="label screen-label">11.03</text>
+    <g><title>2026-11-03 UTC: 0 commits</title><rect x="405" y="237" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-04 UTC: 0 commits</title><rect x="469" y="237" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-05 UTC: 0 commits</title><rect x="533" y="237" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-06 UTC: 0 commits</title><rect x="597" y="237" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-07 UTC: 0 commits</title><rect x="661" y="237" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-08 UTC: 0 commits</title><rect x="725" y="237" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-09 UTC: 5 commits</title><rect x="789" y="237" width="56" height="26" rx="4" fill="#42677a" stroke="#526369"/><text x="817" y="255" text-anchor="middle" font-size="13" font-weight="700" fill="#fff7e0">5</text></g>
+    <text x="338" y="287" class="label screen-label">11.10</text>
+    <g><title>2026-11-10 UTC: 1 commit</title><rect x="405" y="269" width="56" height="26" rx="4" fill="#42677a" stroke="#526369"/><text x="433" y="287" text-anchor="middle" font-size="13" font-weight="700" fill="#fff7e0">1</text></g>
+    <g><title>2026-11-11 UTC: 0 commits</title><rect x="469" y="269" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-12 UTC: 0 commits</title><rect x="533" y="269" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-13 UTC: 0 commits</title><rect x="597" y="269" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-14 UTC: 0 commits</title><rect x="661" y="269" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-15 UTC: 0 commits</title><rect x="725" y="269" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-16 UTC: 0 commits</title><rect x="789" y="269" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <text x="338" y="319" class="label screen-label">11.17</text>
+    <g><title>2026-11-17 UTC: 0 commits</title><rect x="405" y="301" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-18 UTC: 0 commits</title><rect x="469" y="301" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-19 UTC: 0 commits</title><rect x="533" y="301" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-20 UTC: 13 commits</title><rect x="597" y="301" width="56" height="26" rx="4" fill="#bf985d" stroke="#526369"/><text x="625" y="319" text-anchor="middle" font-size="13" font-weight="700" fill="#19252c">13</text></g>
+    <g><title>2026-11-21 UTC: 0 commits</title><rect x="661" y="301" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-22 UTC: 0 commits</title><rect x="725" y="301" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
+    <g><title>2026-11-23 UTC: 0 commits</title><rect x="789" y="301" width="56" height="26" rx="4" fill="#283740" stroke="#526369"/></g>
     <text x="337" y="356" class="label screen-label">LOW</text>
     <g transform="translate(373 344)">
       <rect width="13" height="13" rx="2" fill="#283740" stroke="#566368"/>
@@ -144,7 +144,7 @@
       <rect x="76" width="13" height="13" rx="2" fill="url(#heat)"/>
     </g>
     <text x="473" y="356" class="label screen-label">HIGH</text>
-    <text x="851" y="356" text-anchor="end" class="label screen-label">56 COMMITS · 28 DAYS</text>
+    <text x="851" y="356" text-anchor="end" class="label screen-label">44 COMMITS · 28 DAYS</text>
 
     <path d="M28 390H860L872 402V498L860 510H28Z" fill="#f5f0e1" stroke="#9a9588"/>
     <path d="M28 425V390H128" fill="none" stroke="#a0604c" stroke-width="1.5"/>
@@ -168,7 +168,7 @@
 
     <circle cx="33" cy="541" r="3.3" fill="#6c8075"/>
     <text x="46" y="546" class="label">PUBLIC DATA / DEFAULT-BRANCH COMMITS</text>
-    <text x="870" y="546" class="label" text-anchor="end">UPDATED 2026-11-22 UTC</text>
+    <text x="870" y="546" class="label" text-anchor="end">UPDATED 2026-11-24 UTC</text>
   </g>
   <rect x=".75" y=".75" width="898.5" height="564.5" fill="none" stroke="#958f7e" stroke-width="1.5"/>
 </svg>
